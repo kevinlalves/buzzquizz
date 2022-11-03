@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -21,10 +21,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
   <title>BuzzQuizz App</title>
+  <link rel="stylesheet" href="./assets/stylesheets/reset.css">
+  <link rel="stylesheet" href="./assets/stylesheets/new_first.css">
 </head>
 
 <body>
-<p>oi</p>
+  <header>
+    <p>BuzzQuizz</p>
+  </header>
+  <div class="container">
+    <p>Comece pelo começo</p>
+    <div class="quiz_creation_info">
+      <input onclick="remove_wrong(this)" type="text" id="quiz_title" name="title" required
+       minlength="20" maxlength="60" size="46" placeholder="Título do seu quizz">
+
+       <input onclick="remove_wrong(this)" type="text" id="quiz_url" name="url" required
+       minlength="4" size="46" placeholder="URL da imagem do seu quizz">
+
+       <input onclick="remove_wrong(this)" type="number" id="quiz_question" name="questions" required
+       min="3" size="46" placeholder="Quantidade de perguntas do quizz">
+
+       <input onclick="remove_wrong(this)" type="number" id="quiz_level" name="level" required
+       min="2" size="46" placeholder="Quantidade de níveis do quizz">
+    </div>
+    <button onclick="createLevels()">Prosseguir para criar níveis</button>
+  </div>
+
 </body>
+<script src="./assets/javascript/new_first.js"></script>
 
 </html>
