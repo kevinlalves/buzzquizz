@@ -33,31 +33,32 @@
     <p>Crie suas perguntas</p>
     <div class="questions">
       <p>`Pergunta ${quiz_question}`</p>
-      <input type="text" id="question_text" name="question" required
+      <input onclick="remove_wrong(this)" type="text" id="question_text" name="question" required
        minlength="20" maxlength="160" size="46" placeholder="Texto da pergunta">
       </div>
       <div class="correct_answers"> 
         <p>Resposta correta</p>
-      <input type="text" id="question_correct_answer" name="question-answer" required
+      <input onclick="remove_wrong(this)"  type="text" id="question_correct_answer" name="question-answer" required
        minlength="20" maxlength="160" size="46" placeholder="Resposta correta">
 
-       <input type="text" id="question_correct_url" name="question-url" required
+       <input onclick="remove_wrong(this)"  type="text" id="question_correct_url" name="question-url" required
        minlength="20" maxlength="160" size="46" placeholder="URL da imagem">
       </div>
       <div class="incorrect_answers"> 
         <p>Resposta incorretas</p>
-      <input type="text" id="question_incorrect_answer" name="question-incorrect-answer" required
+      <input  onclick="remove_wrong(this)"  type="text" id="question_incorrect_answer" name="question-incorrect-answer" required
        minlength="20" maxlength="160" size="46" placeholder="Resposta incorreta">
 
-       <input type="text" id="question_incorrect_url" name="question-inc-url" required
+       <input onclick="remove_wrong(this)"  type="text" id="question_incorrect_url" name="question-inc-url" required
        minlength="20" maxlength="160" size="46" placeholder="URL da imagem">
 
 
       </div>
-      <button onclick="createQuestions()">Prosseguir para criar perguntas</button>
+      <button onclick="createLevels()">Prosseguir para criar perguntas</button>
 
 
 </body>
 <script src="./assets/javascript/new_second.js"></script>
 </html>
   
+<!---test-->
