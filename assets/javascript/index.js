@@ -1,4 +1,4 @@
-import { drivenAPI } from "./app.js";
+import { drivenAPI, altMsg } from "./app.js";
 
 
 if (!localStorage.getItem("myQuizzes")) {
@@ -8,7 +8,6 @@ if (!localStorage.getItem("myQuizzes")) {
 const buttonCreateQuizz = document.getElementById("create-quizz");
 const myQuizzesContainer = document.getElementById("my-quizzes");
 const otherQuizzesContainer = document.getElementById("other-quizzes");
-const altMsg = "quizz photo";
 const myQuizzes = JSON.parse(localStorage.getItem("myQuizzes"));
 
 buttonCreateQuizz.addEventListener("click", () => {
@@ -19,9 +18,7 @@ getQuizzes();
 
 function getQuizzes() {
 	fetch(drivenAPI).then(response => response.json())
-		.then(body => {
-			listQuizzes(body);
-		}).catch(() => {
+		.then(listQuizzes).catch(() => {
 			console.log("Problem with get Quizzes");
 		});
 }
