@@ -21,10 +21,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
   <title>BuzzQuizz App</title>
+  <link rel="stylesheet" href="./assets/stylesheets/reset.css">
+  <link rel="stylesheet" href="./assets/stylesheets/new_third.css">
 </head>
 
 <body>
+  <header>
+    <p>BuzzQuizz</p>
+  </header>
+  <div class="container">
+    <p>Agora decida os níveis</p>
+    <div class="question_level">
+      <p>Nível 1</p>
+      <input onclick="remove_wrong(this)" type="text" id="question_level_title" name="question" required
+       minlength="20" maxlength="160" size="46" placeholder="Título do nível">
+
+       <input onclick="remove_wrong(this)" type="number" id="question_level_percentage" name="percentage" required
+       min="0" max="100" size="46" placeholder="% de acerto mínima">
+
+       <input onclick="remove_wrong(this)" type="text" id="question_level_url" name="level_url" required
+       minlength="20" maxlength="160" size="46" placeholder="URL da imagem do nível">
+
+       <input onclick="remove_wrong(this)" type="text" id="question_level_description" name="leve_desc" required
+       minlength="20" maxlength="160" size="46" placeholder="Descrição do nível">
+      </div>
+      <button onclick="createQuiz()">Finalizar Quiz</button>
+      </div>
+      
 
 </body>
+<script src="./assets/javascript/new_third.js"></script>
 
 </html>

@@ -31,6 +31,7 @@
   </header>
   <div class="container">
     <p>Crie suas perguntas</p>
+    <div class="entire_question">
     <div class="questions">
       <p>`Pergunta ${quiz_question}`</p>
       <input onclick="remove_wrong(this)" type="text" id="question_text" name="question" required
@@ -53,6 +54,7 @@
        minlength="20" maxlength="160" size="46" placeholder="URL da imagem">
 
 
+      </div>
       </div>
       <button onclick="createLevels()">Prosseguir para criar perguntas</button>
 
