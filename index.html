@@ -23,6 +23,7 @@
   <title>BuzzQuizz App</title>
   <link rel="stylesheet" href="./assets/stylesheets/reset.css">
   <link rel="stylesheet" href="./assets/stylesheets/index.css">
+  <script type="module" defer src="./assets/javascript/index.js"></script>
 </head>
 
 <body>
@@ -34,22 +35,22 @@
   </div>
   <div class="empty-list">
     <p>Você não criou nenhum quizz ainda :(</p>
-    <p onclick="createQuiz()"id="create-quizz">Criar Quizz</p>
+    <p id="create-quizz">Criar Quizz</p>
   </div>
-  <div class="quizz-list hidden">
+  <div id="my-quizzes" class="quizz-list hidden">
     <div class="quizz">
       <img src="" alt="">
       <p></p>
     </div>
     <div class="quizz">
       <img src="" alt="">
-      <p></p>
+      <p>ahoy</p>
     </div>
   </div>
   <div class="list-header">
     <p>Todos os Quizzes</p>
   </div>
-  <div class="quizz-list">
+  <div id="other-quizzes" class="quizz-list">
     <div class="quizz">
       <img src="" alt="">
       <p></p>
