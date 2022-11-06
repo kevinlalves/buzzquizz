@@ -27,8 +27,8 @@ function questionTemplate(questionNumber) {
 				<input type="text" name="wrongAnswer${questionNumber}1" required minlength="1" placeholder="Resposta incorreta 1">
 				<input type="url" name="wrongAnswerUrl${questionNumber}1" required placeholder="URL da imagem 1">
 				<p></p>
-				<input type="text" name="wrongAnswer${questionNumber}2" required minlength="1" placeholder="Resposta incorreta 2">
-				<input type="url" name="wrongAnswerUrl${questionNumber}2" required placeholder="URL da imagem 2">
+				<input type="text" name="wrongAnswer${questionNumber}2" minlength="1" placeholder="Resposta incorreta 2">
+				<input type="url" name="wrongAnswerUrl${questionNumber}2" placeholder="URL da imagem 2">
 				<p></p>
 				<input type="text" name="wrongAnswer${questionNumber}3" minlength="1" placeholder="Resposta incorreta 3">
 				<input type="url" name="wrongAnswerUrl${questionNumber}3" placeholder="URL da imagem 3">

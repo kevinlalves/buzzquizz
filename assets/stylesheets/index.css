@@ -86,3 +86,14 @@ ion-icon {
   font-size: 20px;
   height: 23px;
 }
+
+@media (max-width: 1053px) {
+  .quizz-list {
+    width: 100%;
+    flex-direction: column;
+  }
+  .list-header {
+    width: 340px;
+    justify-content: space-between;
+  }
+}
