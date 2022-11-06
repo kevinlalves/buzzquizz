@@ -1,21 +1,3 @@
-form p {
-  width: 564px;
-  font-weight: 700;
-  font-size: 20px;
-  margin-top: 20px;
-  margin-bottom: 5px;
-}
-
-.entire-question>p {
-  margin-left: 17px;
-}
-
-.entire-question {
-  background-color: var(--sub-color);
-  margin-bottom: 8px;
-  margin-top: 12px;
-}
-
 button {
   width: 353px;
 }

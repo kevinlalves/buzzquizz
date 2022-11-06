@@ -1,28 +1,31 @@
-import { allowReturnHome, getFormData } from "./app.js";
+import { allowReturnHome, appendExtraContainers, kickIntruder } from "./app.js";
 
-const formsData = getFormData();
+kickIntruder();
+const numQuestions = Number(localStorage.getItem("numQuestions"));
 const minNumQuestions = 3;
 allowReturnHome();
-appendExtraQuestions(Number(formsData.numQuestions));
 
-function appendExtraQuestions(numQuestions) {
-	let lastQuestion = document.getElementById("last-question");
-	let newQuestion;
-	for (let i = minNumQuestions + 1; i <= numQuestions; i++) {
-		newQuestion = createQuestionDiv(i);
-		lastQuestion.insertAdjacentElement("afterend", newQuestion);
-		lastQuestion = newQuestion;
-	}
+function delay(miliseconds) {
+	return new Promise(resolve => {
+		setTimeout(resolve, miliseconds);
+	});
 }
 
-function createQuestionDiv(questionNumber) {
-	const newQuestion = document.createElement("div");
-	newQuestion.classList.add("entire-question");
-	newQuestion.innerHTML = `
+appendExtraContainers(minNumQuestions, Number(numQuestions), questionTemplate);
+
+document.forms.questionsForm.addEventListener("submit", e => {
+	e.preventDefault();
+	addQuestionsToBody(e.currentTarget);
+	e.currentTarget.submit();
+});
+
+function questionTemplate(questionNumber) {
+	return `
 		<div class="entire-question">
 			<p>Pergunta ${questionNumber}</p>
 			<div class="input-div">
 				<input type="text" name="question${questionNumber}" required minlength="20" placeholder="Texto da pergunta">
+        <input type="color" name="color${questionNumber}" required placeholder="Cor de fundo da pergunta">
 				<p>Resposta correta</p>
 				<input type="text" name="rightAnswer${questionNumber}" required minlength="1" placeholder="Resposta correta">
 				<input type="url" name="rightAnswerUrl${questionNumber}" required placeholder="URL da imagem">
@@ -38,5 +41,42 @@ function createQuestionDiv(questionNumber) {
 			</div>
 		</div>
 	`;
-	return newQuestion;
+}
+
+function addQuestionsToBody(form) {
+	const body = JSON.parse(localStorage.getItem("body"));
+	const questions = [];
+	console.log("numQuestions", numQuestions);
+	for (let i = 1; i <= numQuestions; i++) {
+		questions.push(createQuestionJSON(form, i));
+	}
+	body["questions"] = questions;
+	localStorage.setItem("body", JSON.stringify(body));
+}
+
+function createQuestionJSON(form, questionNum) {
+	const question = {};
+	const answers = [];
+	question["title"] = form[`question${questionNum}`].value;
+	question["color"] = form[`color${questionNum}`].value;
+	const rightAnswer = {
+		"text": form[`rightAnswer${questionNum}`].value,
+		"image": form[`rightAnswerUrl${questionNum}`].value,
+		"isCorrectAnswer": true
+	};
+	answers.push(rightAnswer);
+	for (let i = 1; i <= 3 && form[`wrongAnswer${numQuestions}${i}`].value; i++) {
+		answers.push(createAnswerJSON(form, i, questionNum));
+	}
+	question["answers"] = answers;
+	return question;
+}
+
+function createAnswerJSON(form, answerNum, questionNum) {
+	const answer = {
+		"text": form[`wrongAnswer${questionNum}${answerNum}`].value,
+		"image": form[`wrongAnswerUrl${questionNum}${answerNum}`].value,
+		"isCorrectAnswer": false
+	};
+	return answer;
 }

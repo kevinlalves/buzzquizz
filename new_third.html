@@ -24,33 +24,42 @@
   <link rel="stylesheet" href="./assets/stylesheets/reset.css">
   <link rel="stylesheet" href="./assets/stylesheets/app.css">
   <link rel="stylesheet" href="./assets/stylesheets/new_third.css">
+  <script defer type="module" src="./assets/javascript/new_third.js"></script>
 </head>
 
 <body>
   <header>
     <p>BuzzQuizz</p>
   </header>
-  <div class="container">
-    <p>Agora decida os níveis</p>
-    <div class="question_level">
+  <h1>Agora decida os níveis</h1>
+  <form action="./new_fourth.html" method="get" name="levelsForm">
+    <div class="entire-question">
       <p>Nível 1</p>
-      <input onclick="remove_wrong(this)" type="text" id="question_level_title" name="question" required
-       minlength="20" maxlength="160" size="46" placeholder="Título do nível">
+      <div class="input-div">
+        <input type="text" name="title1" required minlength="10" placeholder="Título do nível">
 
-       <input onclick="remove_wrong(this)" type="number" id="question_level_percentage" name="percentage" required
-       min="0" max="100" size="46" placeholder="% de acerto mínima">
+        <input type="number" name="percentage1" required min="0" max="0" placeholder="% de acerto mínima, 0 é obrigatório nessa">
 
-       <input onclick="remove_wrong(this)" type="text" id="question_level_url" name="level_url" required
-       minlength="20" maxlength="160" size="46" placeholder="URL da imagem do nível">
+        <input type="url" name="url1" required placeholder="URL da imagem do nível">
 
-       <input onclick="remove_wrong(this)" type="text" id="question_level_description" name="leve_desc" required
-       minlength="20" maxlength="160" size="46" placeholder="Descrição do nível">
+        <input type="text" name="description1" required minlength="30" placeholder="Descrição do nível">
       </div>
-      <button onclick="createQuiz()">Finalizar Quiz</button>
+    </div>
+    <div class="entire-question">
+      <p>Nível 2</p>
+      <div id="last-container" class="input-div">
+        <input type="text" name="title2" required minlength="10" placeholder="Título do nível">
+
+        <input type="number" name="percentage2" required min="0" max="100" placeholder="% de acerto mínima">
+
+        <input type="url" name="url2" required placeholder="URL da imagem do nível">
+
+        <input type="text" name="description2" required minlength="30" placeholder="Descrição do nível">
       </div>
-
-
+    </div>
+    <button class="restart">Finalizar Quiz</button>
+    <button class="return">Voltar pra Home</button>
+  </form>
 </body>
-<script src="./assets/javascript/new_third.js"></script>
 
 </html>

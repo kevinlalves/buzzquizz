@@ -104,3 +104,21 @@ form {
   flex-direction: column;
   align-items: center;
 }
+
+.entire-question>p {
+  margin-left: 20px;
+}
+
+.entire-question {
+  background-color: var(--sub-color);
+  margin-bottom: 8px;
+  margin-top: 12px;
+}
+
+form p {
+  width: 564px;
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}

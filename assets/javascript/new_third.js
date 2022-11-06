@@ -1,61 +1,64 @@
-let question_level_title;
-let question_level_percentage;
-let question_level_url;
-let question_level_description;
-let check1;
-let check2;
-let check3;
-let check4;
+import { allowReturnHome, appendExtraContainers, drivenAPI, kickIntruder } from "./app.js";
 
+kickIntruder();
+const numLevels = Number(localStorage.getItem("numLevels"));
+const numMinLevels = 2;
+const levelsForm = document.forms.levelsForm;
+allowReturnHome();
+appendExtraContainers(numMinLevels, Number(numLevels), levelTemplate);
 
+levelsForm.addEventListener("submit", e => {
+	e.preventDefault();
+	sendQuizz(e.currentTarget);
+});
 
+function levelTemplate(levelNumber) {
+  return `
+		<p>Nível ${levelNumber}</p>
+		<div class="input-div">
+			<input type="text" name="title${levelNumber}" required minlength="10" placeholder="Título do nível">
+			<input type="number" name="percentage${levelNumber}" required min="0" max="100" placeholder="% de acerto mínima">
+			<input type="url" name="url${levelNumber}" required placeholder="URL da imagem do nível">
+			<input type="text" name="description${levelNumber}" required minlength="30" placeholder="Descrição do nível">
+		</div>
+  `;
+}
 
-function createQuiz() {
-    question_level_title = document.querySelector('#question_level_title').value
-    question_level_percentage = document.querySelector('#question_level_percentage').value
-    question_level_url = document.querySelector('#question_level_url').value
-    question_level_description = document.querySelector('#question_level_description').value
+function sendQuizz(form) {
+	fetch(drivenAPI, {
+		method: "post",
+		headers: {
+			"content-type": "application/json"
+		},
+		body: getRequestBody(form)
+	}).then(response => response.json())
+		.then(body => {
+			console.log(body);
+			form.submit();
+		})
+		.catch(err => {
+			console.log("Problem with sendQuizz");
+			err
+		});
+}
 
-    if (question_level_title === '') {
-    var element = document.getElementById('question_level_title')
-    element.classList.add("wrong");
-    check1 = 0;
-    } else {
-        check1 = 1;
-    }
-
-    if (question_level_percentage === '') {
-        var element = document.getElementById('question_level_percentage')
-        element.classList.add("wrong");
-        check2 = 0;
-        } else {
-            check2 = 1; 
-        }
-
-
-    if (!question_level_url.includes('http') || question_level_url === '') {
-    var element = document.getElementById('question_level_url')
-    element.classList.add("wrong");
-    check3 = 0;
-    } else {
-        check3 = 1;
-    }
-
-    if (question_level_description === '') {
-        var element = document.getElementById('question_level_description')
-        element.classList.add("wrong");
-        check4 = 0;
-        } else {
-            check4 = 1; 
-        }
-
-
-    if(check1 + check2 + check3 + check4 === 4) {
-        window.location.replace("./new_fourth.html");
-    }
+function getRequestBody(form) {
+	const body = JSON.parse(localStorage.getItem("body"));
+	const levels = [];
+	for (let i = 1; i <= numLevels; i++) {
+		levels.push(createLevelJSON(form, i));
+	}
+	body["levels"] = levels;
+	return JSON.stringify(body);
 }
 
 
-function remove_wrong(element) {
-    element.classList.remove("wrong");
+function createLevelJSON(form, levelNum) {
+	const level = {
+		"title": form[`title${levelNum}`].value,
+		"image": form[`url${levelNum}`].value,
+		"text": form[`description${levelNum}`].value,
+		"minValue": form[`percentage${levelNum}`].value
+	};
+	return level;
 }

@@ -32,11 +32,12 @@
     <p>BuzzQuizz</p>
   </header>
   <h1>Crie suas perguntas</h1>
-  <form action="./new_third.html" method="get" name="secondForm">
+  <form action="./new_third.html" method="get" name="questionsForm">
     <div class="entire-question">
       <p>Pergunta 1</p>
       <div class="input-div">
         <input type="text" name="question1" required minlength="20" placeholder="Texto da pergunta">
+        <input type="color" name="color1" required placeholder="Cor de fundo da pergunta">
         <p>Resposta correta</p>
         <input type="text" name="rightAnswer1" required minlength="1" placeholder="Resposta correta">
         <input type="url" name="rightAnswerUrl1" required placeholder="URL da imagem">
@@ -54,37 +55,39 @@
     <div class="entire-question">
       <p>Pergunta 2</p>
       <div class="input-div">
-        <input type="text" name="question1" required minlength="20" placeholder="Texto da pergunta">
+        <input type="text" name="question2" required minlength="20" placeholder="Texto da pergunta">
+        <input type="color" name="color2" required placeholder="Cor de fundo da pergunta">
         <p>Resposta correta</p>
-        <input type="text" name="rightAnswer1" required minlength="1" placeholder="Resposta correta">
-        <input type="url" name="rightAnswerUrl1" required placeholder="URL da imagem">
+        <input type="text" name="rightAnswer2" required minlength="1" placeholder="Resposta correta">
+        <input type="url" name="rightAnswerUrl2" required placeholder="URL da imagem">
         <p>Resposta incorretas</p>
-        <input type="text" name="wrongAnswer11" required minlength="1" placeholder="Resposta incorreta 1">
-        <input type="url" name="wrongAnswerUrl11" required placeholder="URL da imagem 1">
+        <input type="text" name="wrongAnswer21" required minlength="1" placeholder="Resposta incorreta 1">
+        <input type="url" name="wrongAnswerUrl21" required placeholder="URL da imagem 1">
         <p></p>
-        <input type="text" name="wrongAnswer12" required minlength="1" placeholder="Resposta incorreta 2">
-        <input type="url" name="wrongAnswerUrl12" required placeholder="URL da imagem 2">
+        <input type="text" name="wrongAnswer22" required minlength="1" placeholder="Resposta incorreta 2">
+        <input type="url" name="wrongAnswerUrl22" required placeholder="URL da imagem 2">
         <p></p>
-        <input type="text" name="wrongAnswer13" minlength="1" placeholder="Resposta incorreta 3">
-        <input type="url" name="wrongAnswerUrl13" placeholder="URL da imagem 3">
+        <input type="text" name="wrongAnswer23" minlength="1" placeholder="Resposta incorreta 3">
+        <input type="url" name="wrongAnswerUrl23" placeholder="URL da imagem 3">
       </div>
     </div>
-    <div id="last-question" class="entire-question">
+    <div id="last-container" class="entire-question">
       <p>Pergunta 3</p>
       <div class="input-div">
-        <input type="text" name="question1" required minlength="20" placeholder="Texto da pergunta">
+        <input type="text" name="question3" required minlength="20" placeholder="Texto da pergunta">
+        <input type="color" name="color3" required placeholder="Cor de fundo da pergunta">
         <p>Resposta correta</p>
-        <input type="text" name="rightAnswer1" required minlength="1" placeholder="Resposta correta">
-        <input type="url" name="rightAnswerUrl1" required placeholder="URL da imagem">
+        <input type="text" name="rightAnswer3" required minlength="1" placeholder="Resposta correta">
+        <input type="url" name="rightAnswerUrl3" required placeholder="URL da imagem">
         <p>Resposta incorretas</p>
-        <input type="text" name="wrongAnswer11" required minlength="1" placeholder="Resposta incorreta 1">
-        <input type="url" name="wrongAnswerUrl11" required placeholder="URL da imagem 1">
+        <input type="text" name="wrongAnswer31" required minlength="1" placeholder="Resposta incorreta 1">
+        <input type="url" name="wrongAnswerUrl31" required placeholder="URL da imagem 1">
         <p></p>
-        <input type="text" name="wrongAnswer12" required minlength="1" placeholder="Resposta incorreta 2">
-        <input type="url" name="wrongAnswerUrl12" required placeholder="URL da imagem 2">
+        <input type="text" name="wrongAnswer32" required minlength="1" placeholder="Resposta incorreta 2">
+        <input type="url" name="wrongAnswerUrl32" required placeholder="URL da imagem 2">
         <p></p>
-        <input type="text" name="wrongAnswer13" minlength="1" placeholder="Resposta incorreta 3">
-        <input type="url" name="wrongAnswerUrl13" placeholder="URL da imagem 3">
+        <input type="text" name="wrongAnswer33" minlength="1" placeholder="Resposta incorreta 3">
+        <input type="url" name="wrongAnswerUrl33" placeholder="URL da imagem 3">
       </div>
     </div>
     <button class="restart">Prosseguir para criar perguntas</button>

@@ -1,6 +1,8 @@
 import { drivenAPI, altMsg } from "./app.js";
 
-
+localStorage.removeItem("body");
+localStorage.removeItem("numQuestions");
+localStorage.removeItem("numLevels");
 if (!localStorage.getItem("myQuizzes")) {
 	localStorage.setItem("myQuizzes", "{}");
 }
