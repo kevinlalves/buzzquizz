@@ -1,7 +1,6 @@
 import { altMsg, drivenAPI } from "./app.js";
 
 if (!localStorage.getItem("selectedQuizz")) {
-  alert("You shouldn't be here!");
   window.location.replace("./index.html");
 }
 
@@ -52,6 +51,9 @@ function listQuestion(question) {
 function appendAnswers(question, container) {
   const answersContainer = document.createElement("div");
   answersContainer.classList.add("answers");
+  question.answers.sort(() => {
+    return Math.random() - 0.5;
+  });
   for (const answer of question.answers) {
     appendAnswer(answer, answersContainer);
   }
@@ -127,7 +129,6 @@ function createResult() {
 function getLevel(score) {
   let currentValue = -1;
   let currentLevel = null;
-  console.log(numRightAnswers);
   for (const level of levels) {
     if (score >= Number(level.minValue) && currentValue < level.minValue) {
       currentLevel = level;
@@ -142,6 +143,7 @@ function addButtonListeners() {
   const buttonRestart = document.getElementById("restart");
   buttonRestart.addEventListener("click", () => {
     window.location.reload();
+    document.body.scrollIntoView();
   });
   buttonReturn.addEventListener("click", () => {
     window.location.replace("./index.html");

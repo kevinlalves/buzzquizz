@@ -4,6 +4,7 @@ localStorage.removeItem("body");
 localStorage.removeItem("numQuestions");
 localStorage.removeItem("numLevels");
 localStorage.removeItem("finishedQuizz");
+localStorage.removeItem("selectedQuizz");
 if (!localStorage.getItem("myQuizzes")) {
 	localStorage.setItem("myQuizzes", "{}");
 }

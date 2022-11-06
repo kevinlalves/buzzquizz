@@ -65,8 +65,7 @@ ion-icon {
 .quizz p {
   position: absolute;
   color: var(--sub-color);
-  height: 54px;
-  bottom: 3px;
+  bottom: 15px;
   left: 18px;
   width: 304px;
   overflow-wrap: break-word;

@@ -5,12 +5,6 @@ const numQuestions = Number(localStorage.getItem("numQuestions"));
 const minNumQuestions = 3;
 allowReturnHome();
 
-function delay(miliseconds) {
-	return new Promise(resolve => {
-		setTimeout(resolve, miliseconds);
-	});
-}
-
 appendExtraContainers(minNumQuestions, Number(numQuestions), questionTemplate);
 
 document.forms.questionsForm.addEventListener("submit", e => {
@@ -46,7 +40,6 @@ function questionTemplate(questionNumber) {
 function addQuestionsToBody(form) {
 	const body = JSON.parse(localStorage.getItem("body"));
 	const questions = [];
-	console.log("numQuestions", numQuestions);
 	for (let i = 1; i <= numQuestions; i++) {
 		questions.push(createQuestionJSON(form, i));
 	}
