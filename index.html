@@ -24,7 +24,8 @@
   <link rel="stylesheet" href="./assets/stylesheets/reset.css">
   <link rel="stylesheet" href="./assets/stylesheets/app.css">
   <link rel="stylesheet" href="./assets/stylesheets/index.css">
-  <script type="module" defer src="./assets/javascript/index.js"></script>
+  <script defer type="module" src="./assets/javascript/index.js"></script>
+  <script defer type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 </head>
 
 <body>
@@ -33,6 +34,7 @@
   </header>
   <div class="list-header hidden">
     <p>Seus Quizzes</p>
+    <ion-icon id="create-quizz-circle" name="add-circle"></ion-icon>
   </div>
   <div class="empty-list">
     <p>Você não criou nenhum quizz ainda :(</p>
@@ -52,14 +54,6 @@
     <p>Todos os Quizzes</p>
   </div>
   <div id="other-quizzes" class="quizz-list">
-    <div class="quizz">
-      <img src="" alt="">
-      <p></p>
-    </div>
-    <div class="quizz">
-      <img src="" alt="">
-      <p></p>
-    </div>
   </div>
 </body>
 <script src="./assets/javascript/index.js"></script>

@@ -33,12 +33,13 @@ function sendQuizz(form) {
 		body: getRequestBody(form)
 	}).then(response => response.json())
 		.then(body => {
-			console.log(body);
+			const myQuizzes = JSON.parse(localStorage.getItem("myQuizzes"));
+			myQuizzes[body.id] = true;
+			localStorage.setItem("myQuizzes", JSON.stringify(myQuizzes));
 			form.submit();
 		})
-		.catch(err => {
+		.catch(() => {
 			console.log("Problem with sendQuizz");
-			err
 		});
 }
 

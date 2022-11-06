@@ -8,6 +8,7 @@ if (!localStorage.getItem("myQuizzes")) {
 }
 
 const buttonCreateQuizz = document.getElementById("create-quizz");
+const circleCreateQuizz = document.getElementById("create-quizz-circle");
 const myQuizzesContainer = document.getElementById("my-quizzes");
 const otherQuizzesContainer = document.getElementById("other-quizzes");
 const myQuizzes = JSON.parse(localStorage.getItem("myQuizzes"));
@@ -37,6 +38,9 @@ function listQuizzes(quizzes) {
 	}
 	if (myQuizzesContainer.childElementCount > 0) {
 		showMyQuizzes();
+		circleCreateQuizz.addEventListener("click", () => {
+			window.location.replace("./new_first.html");
+		});
 	}
 }
 
@@ -58,6 +62,8 @@ function createQuizzDiv(quizz) {
 
 function showMyQuizzes() {
 	const emptyList = document.querySelector(".empty-list");
+	const myListTitle = document.querySelector(".list-header");
 	myQuizzesContainer.classList.remove("hidden");
+	myListTitle.classList.remove("hidden");
 	emptyList.classList.add("hidden");
 }

@@ -7,6 +7,13 @@ img {
   width: 100%;
 }
 
+ion-icon {
+  color: var(--main-color);
+  font-size: 48px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
 .empty-list {
   width: 1062px;
   height: 181px;
