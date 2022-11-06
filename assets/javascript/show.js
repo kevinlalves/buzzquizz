@@ -27,7 +27,7 @@ function getQuizz() {
 function renderInfo(quizz) {
   const quizzTitle = document.querySelector(".quizz-title");
   quizzTitle.style.backgroundImage = `url(${quizz.image})`;
-  quizzTitle.innerHTML = `
+  quizzTitle.innerHTML += `
     <p>${quizz.title}</p>
   `;
   numQuestions = quizz.questions.length;
