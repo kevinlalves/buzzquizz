@@ -1,8 +1,20 @@
+import { allowReturnHome, kickIntruder } from "./app.js";
 
-function accessQuiz() {
-    /*create access quiz in here*/
-}
+kickIntruder();
+allowReturnHome();
 
-function returnHome() {
-    window.location.replace("./index.html");
+const finishedQuizz = JSON.parse(localStorage.getItem("finishedQuizz"));
+
+const showQuizzButton = document.querySelector(".restart");
+showQuizzButton.addEventListener("click", () => {
+  localStorage.setItem("selectedQuizz", finishedQuizz.id);
+  window.location.replace("./show.html");
+});
+
+fillQuizzFrame();
+
+function fillQuizzFrame() {
+	const quizzFrame = document.querySelector(".finished-quizz");
+	quizzFrame.firstElementChild.src = finishedQuizz.image;
+	quizzFrame.lastElementChild.innerText = finishedQuizz.title;
 }

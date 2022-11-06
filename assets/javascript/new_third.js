@@ -36,6 +36,7 @@ function sendQuizz(form) {
 			const myQuizzes = JSON.parse(localStorage.getItem("myQuizzes"));
 			myQuizzes[body.id] = true;
 			localStorage.setItem("myQuizzes", JSON.stringify(myQuizzes));
+			localStorage.setItem("finishedQuizz", JSON.stringify(body));
 			form.submit();
 		})
 		.catch(() => {
