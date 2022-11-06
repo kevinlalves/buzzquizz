@@ -4,7 +4,7 @@ header {
 
 img {
   height: 181px;
-  width: 340px;
+  width: 100%;
 }
 
 .empty-list {
@@ -50,15 +50,19 @@ img {
   margin-right: 7px;
   margin-bottom: 12px;
   cursor: pointer;
+  width: 340px;
+  text-align: center;
 }
 
 .quizz p {
   position: absolute;
   color: var(--sub-color);
   height: 54px;
-  bottom: 7px;
+  bottom: 3px;
   left: 18px;
   width: 304px;
+  overflow-wrap: break-word;
+  font-size: 19px;
 }
 
 .list-header {
@@ -73,8 +77,4 @@ img {
   font-weight: 700;
   font-size: 20px;
   height: 23px;
-}
-
-.hidden {
-  display: none !important;
 }

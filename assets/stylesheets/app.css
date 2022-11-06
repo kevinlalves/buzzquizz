@@ -3,12 +3,12 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 400 !important;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--sub-color);
+  background-color: var(--back-color);
 }
 
 :root {
@@ -16,6 +16,7 @@ body {
   --sub-color: white;
   --correct-color: #009C22;
   --incorrect-color: #FF4B4B;
+  --back-color: #FAFAFA;
 }
 
 header {
@@ -36,4 +37,8 @@ header p {
 
 input {
   padding-left: 10px;
+}
+
+.hidden {
+  display: none !important;
 }
