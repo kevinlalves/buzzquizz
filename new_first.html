@@ -24,31 +24,49 @@
   <link rel="stylesheet" href="./assets/stylesheets/reset.css">
   <link rel="stylesheet" href="./assets/stylesheets/app.css">
   <link rel="stylesheet" href="./assets/stylesheets/new_first.css">
+  <script defer type="module" src="./assets/javascript/new_first.js"></script>
 </head>
 
 <body>
   <header>
     <p>BuzzQuizz</p>
   </header>
-  <div class="container">
-    <p>Comece pelo começo</p>
-    <div class="quiz_creation_info">
-      <input onclick="remove_wrong(this)" type="text" id="quiz_title" name="title" required
-       minlength="20" maxlength="60" size="46" placeholder="Título do seu quizz">
-
-       <input onclick="remove_wrong(this)" type="text" id="quiz_url" name="url" required
-       minlength="4" size="46" placeholder="URL da imagem do seu quizz">
-
-       <input onclick="remove_wrong(this)" type="number" id="quiz_question" name="questions" required
-       min="3" size="46" placeholder="Quantidade de perguntas do quizz">
-
-       <input onclick="remove_wrong(this)" type="number" id="quiz_level" name="level" required
-       min="2" size="46" placeholder="Quantidade de níveis do quizz">
-    </div>
-    <button onclick="createQuestions()">Prosseguir para criar níveis</button>
-  </div>
+  <h1>Comece pelo começo</h2>
+    <form action="./new_second.html" method="get" name="firstForm">
+      <div class="input-div">
+        <input
+          type="text"
+          name="title"
+          required
+          minlength="20"
+          maxlength="60"
+          placeholder="Título do seu quizz"
+        >
+        <input
+          type="url"
+          name="url"
+          required
+          placeholder="URL da imagem do seu quizz"
+          >
+        <input
+          type="number"
+          name="numQuestions"
+          required
+          min="3"
+          placeholder="Quantidade de perguntas do quizz"
+        >
+        <input
+          type="number"
+          name="level"
+          required
+          min="2"
+          placeholder="Quantidade de níveis do quizz"
+        >
+      </div>
+      <button class="restart">Prosseguir para criar níveis</button>
+      <button class="return">Voltar pra home</button>
+    </form>
 
 </body>
-<script src="./assets/javascript/new_first.js"></script>
 
 </html>

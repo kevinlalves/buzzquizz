@@ -40,7 +40,6 @@ function renderInfo(quizz) {
 function listQuestion(question) {
   const newQuestion = document.createElement("div");
   newQuestion.classList.add("question");
-  question.color = question.color.toUpperCase() === "#FFFFFF" ? "#000000" : question.color;
   newQuestion.innerHTML = `
     <div style="background-color: ${question.color};" class="question-header">
       <p>${question.title}</p>
@@ -114,10 +113,10 @@ function createResult() {
       <img src="${level.image}" alt="${altMsg}" />
       <p>${level.text}</p>
     </div>
-    <button id="restart">
+    <button id="restart" class="restart">
       <p>Reiniciar Quizz</p>
     </button>
-    <button id="return">
+    <button id="return" class="return">
       <p>Voltar pra home</p>
     </button>
   `;

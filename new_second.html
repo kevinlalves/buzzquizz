@@ -24,44 +24,77 @@
   <link rel="stylesheet" href="./assets/stylesheets/reset.css">
   <link rel="stylesheet" href="./assets/stylesheets/app.css">
   <link rel="stylesheet" href="./assets/stylesheets/new_second.css">
+  <script defer type="module" src="./assets/javascript/new_second.js"></script>
 </head>
 
 <body>
   <header>
     <p>BuzzQuizz</p>
   </header>
-  <div class="container">
-    <p>Crie suas perguntas</p>
-    <div class="entire_question">
-    <div class="questions">
-      <p>`Pergunta ${quiz_question}`</p>
-      <input onclick="remove_wrong(this)" type="text" id="question_text" name="question" required
-       minlength="20" maxlength="160" size="46" placeholder="Texto da pergunta">
-      </div>
-      <div class="correct_answers">
+  <h1>Crie suas perguntas</h1>
+  <form action="./new_third.html" method="get" name="secondForm">
+    <div class="entire-question">
+      <p>Pergunta 1</p>
+      <div class="input-div">
+        <input type="text" name="question1" required minlength="20" placeholder="Texto da pergunta">
         <p>Resposta correta</p>
-      <input onclick="remove_wrong(this)"  type="text" id="question_correct_answer" name="question-answer" required
-       minlength="20" maxlength="160" size="46" placeholder="Resposta correta">
-
-       <input onclick="remove_wrong(this)"  type="text" id="question_correct_url" name="question-url" required
-       minlength="20" maxlength="160" size="46" placeholder="URL da imagem">
-      </div>
-      <div class="incorrect_answers">
+        <input type="text" name="rightAnswer1" required minlength="1" placeholder="Resposta correta">
+        <input type="url" name="rightAnswerUrl1" required placeholder="URL da imagem">
         <p>Resposta incorretas</p>
-      <input  onclick="remove_wrong(this)"  type="text" id="question_incorrect_answer" name="question-incorrect-answer" required
-       minlength="20" maxlength="160" size="46" placeholder="Resposta incorreta">
-
-       <input onclick="remove_wrong(this)"  type="text" id="question_incorrect_url" name="question-inc-url" required
-       minlength="20" maxlength="160" size="46" placeholder="URL da imagem">
-
-
+        <input type="text" name="wrongAnswer11" required minlength="1" placeholder="Resposta incorreta 1">
+        <input type="url" name="wrongAnswerUrl11" required placeholder="URL da imagem 1">
+        <p></p>
+        <input type="text" name="wrongAnswer12" required minlength="1" placeholder="Resposta incorreta 2">
+        <input type="url" name="wrongAnswerUrl12" required placeholder="URL da imagem 2">
+        <p></p>
+        <input type="text" name="wrongAnswer13" minlength="1" placeholder="Resposta incorreta 3">
+        <input type="url" name="wrongAnswerUrl13" placeholder="URL da imagem 3">
       </div>
+    </div>
+    <div class="entire-question">
+      <p>Pergunta 2</p>
+      <div class="input-div">
+        <input type="text" name="question1" required minlength="20" placeholder="Texto da pergunta">
+        <p>Resposta correta</p>
+        <input type="text" name="rightAnswer1" required minlength="1" placeholder="Resposta correta">
+        <input type="url" name="rightAnswerUrl1" required placeholder="URL da imagem">
+        <p>Resposta incorretas</p>
+        <input type="text" name="wrongAnswer11" required minlength="1" placeholder="Resposta incorreta 1">
+        <input type="url" name="wrongAnswerUrl11" required placeholder="URL da imagem 1">
+        <p></p>
+        <input type="text" name="wrongAnswer12" required minlength="1" placeholder="Resposta incorreta 2">
+        <input type="url" name="wrongAnswerUrl12" required placeholder="URL da imagem 2">
+        <p></p>
+        <input type="text" name="wrongAnswer13" minlength="1" placeholder="Resposta incorreta 3">
+        <input type="url" name="wrongAnswerUrl13" placeholder="URL da imagem 3">
       </div>
-      <button onclick="createLevels()">Prosseguir para criar perguntas</button>
+    </div>
+    <div id="last-question" class="entire-question">
+      <p>Pergunta 3</p>
+      <div class="input-div">
+        <input type="text" name="question1" required minlength="20" placeholder="Texto da pergunta">
+        <p>Resposta correta</p>
+        <input type="text" name="rightAnswer1" required minlength="1" placeholder="Resposta correta">
+        <input type="url" name="rightAnswerUrl1" required placeholder="URL da imagem">
+        <p>Resposta incorretas</p>
+        <input type="text" name="wrongAnswer11" required minlength="1" placeholder="Resposta incorreta 1">
+        <input type="url" name="wrongAnswerUrl11" required placeholder="URL da imagem 1">
+        <p></p>
+        <input type="text" name="wrongAnswer12" required minlength="1" placeholder="Resposta incorreta 2">
+        <input type="url" name="wrongAnswerUrl12" required placeholder="URL da imagem 2">
+        <p></p>
+        <input type="text" name="wrongAnswer13" minlength="1" placeholder="Resposta incorreta 3">
+        <input type="url" name="wrongAnswerUrl13" placeholder="URL da imagem 3">
+      </div>
+    </div>
+    <button class="restart">Prosseguir para criar perguntas</button>
+    <button class="return">Volte pra home</button>
+  </form>
+</body>
 
 
 </body>
-<script src="./assets/javascript/new_second.js"></script>
+
 </html>
 
 <!---test-->
