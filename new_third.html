@@ -32,9 +32,12 @@
     <p>BuzzQuizz</p>
   </header>
   <h1>Agora decida os níveis</h1>
-  <form action="./new_fourth.html" method="get" name="levelsForm">
+  <form action="./new_fourth.html" method="get" name="form">
     <div class="entire-question">
-      <p>Nível 1</p>
+      <div class="input-div-title">
+        <p>Nivel 1</p>
+        <img id="1" class="hidden" src="./assets/images/vector.png" alt="edit image">
+      </div>
       <div class="input-div">
         <input type="text" name="title1" required minlength="10" placeholder="Título do nível">
 
@@ -46,8 +49,11 @@
       </div>
     </div>
     <div class="entire-question">
-      <p>Nível 2</p>
-      <div id="last-container" class="input-div">
+      <div class="input-div-title">
+        <p>Nível 2</p>
+        <img src="./assets/images/vector.png" alt="edit image">
+      </div>
+      <div id="last-container" class="input-div hidden">
         <input type="text" name="title2" required minlength="10" placeholder="Título do nível">
 
         <input type="number" name="percentage2" required min="0" max="100" placeholder="% de acerto mínima">

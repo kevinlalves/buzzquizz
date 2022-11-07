@@ -125,6 +125,22 @@ form p {
   margin-bottom: 5px;
 }
 
+.input-div-title {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-div-title img {
+  cursor: pointer;
+  width: 26px;
+  height: 23px;
+  margin-top: 10px;
+}
+
 @media (max-width: 600px) {
   form {
     width: 100%;

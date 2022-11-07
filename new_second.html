@@ -32,9 +32,12 @@
     <p>BuzzQuizz</p>
   </header>
   <h1>Crie suas perguntas</h1>
-  <form action="./new_third.html" method="get" name="questionsForm">
+  <form action="./new_third.html" method="get" name="form">
     <div class="entire-question">
-      <p>Pergunta 1</p>
+      <div class="input-div-title">
+        <p>Pergunta 1</p>
+        <img id="1" class="hidden" src="./assets/images/vector.png" alt="edit image">
+      </div>
       <div class="input-div">
         <input type="text" name="question1" required minlength="20" placeholder="Texto da pergunta">
         <input type="color" name="color1" required placeholder="Cor de fundo da pergunta">
@@ -53,8 +56,11 @@
       </div>
     </div>
     <div class="entire-question">
-      <p>Pergunta 2</p>
-      <div class="input-div">
+      <div class="input-div-title">
+        <p>Pergunta 2</p>
+        <img src="./assets/images/vector.png" alt="edit image">
+      </div>
+      <div class="input-div hidden">
         <input type="text" name="question2" required minlength="20" placeholder="Texto da pergunta">
         <input type="color" name="color2" required placeholder="Cor de fundo da pergunta">
         <p>Resposta correta</p>
@@ -72,8 +78,11 @@
       </div>
     </div>
     <div id="last-container" class="entire-question">
-      <p>Pergunta 3</p>
-      <div class="input-div">
+      <div class="input-div-title">
+        <p>Pergunta 3</p>
+        <img src="./assets/images/vector.png" alt="edit image">
+      </div>
+      <div class="input-div hidden">
         <input type="text" name="question3" required minlength="20" placeholder="Texto da pergunta">
         <input type="color" name="color3" required placeholder="Cor de fundo da pergunta">
         <p>Resposta correta</p>

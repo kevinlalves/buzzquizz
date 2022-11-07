@@ -1,10 +1,11 @@
-import { allowReturnHome, appendExtraContainers, drivenAPI, kickIntruder } from "./app.js";
+import { addDrawerListeners, allowReturnHome, appendExtraContainers, drivenAPI, kickIntruder } from "./app.js";
 
 kickIntruder();
 const numLevels = Number(localStorage.getItem("numLevels"));
 const numMinLevels = 2;
-const levelsForm = document.forms.levelsForm;
+const levelsForm = document.forms.form;
 allowReturnHome();
+addDrawerListeners();
 appendExtraContainers(numMinLevels, Number(numLevels), levelTemplate);
 
 levelsForm.addEventListener("submit", e => {
@@ -14,8 +15,11 @@ levelsForm.addEventListener("submit", e => {
 
 function levelTemplate(levelNumber) {
   return `
-		<p>Nível ${levelNumber}</p>
-		<div class="input-div">
+    <div class="input-div-title">
+       <p>Nivel ${levelNumber}</p>
+       <img src="./assets/images/vector.png" alt="edit image">
+    </div>
+		<div class="input-div hidden">
 			<input type="text" name="title${levelNumber}" required minlength="10" placeholder="Título do nível">
 			<input type="number" name="percentage${levelNumber}" required min="0" max="100" placeholder="% de acerto mínima">
 			<input type="url" name="url${levelNumber}" required placeholder="URL da imagem do nível">

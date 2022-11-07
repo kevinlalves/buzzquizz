@@ -34,3 +34,22 @@ export function kickIntruder() {
 		window.location.replace("./index.html");
 	}
 }
+
+function openDrawer(drawer, drawerOpen) {
+	drawerOpen.img.classList.remove("hidden");
+	drawerOpen.img.parentElement.nextElementSibling.classList.add("hidden");
+	drawer.classList.add("hidden");
+	drawer.parentElement.nextElementSibling.classList.remove("hidden");
+	drawerOpen.img = drawer;
+}
+
+export function addDrawerListeners() {
+	const imgs = document.forms.form.querySelectorAll("img");
+	const  drawerOpen = {};
+	drawerOpen.img  = document.getElementById("1");
+	for (const img of imgs) {
+		img.addEventListener("click", e => {
+			openDrawer(e.currentTarget, drawerOpen);
+		});
+	}
+}

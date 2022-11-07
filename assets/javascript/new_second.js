@@ -1,4 +1,4 @@
-import { allowReturnHome, appendExtraContainers, kickIntruder } from "./app.js";
+import { allowReturnHome, appendExtraContainers, kickIntruder, addDrawerListeners } from "./app.js";
 
 kickIntruder();
 const numQuestions = Number(localStorage.getItem("numQuestions"));
@@ -6,8 +6,9 @@ const minNumQuestions = 3;
 allowReturnHome();
 
 appendExtraContainers(minNumQuestions, Number(numQuestions), questionTemplate);
+addDrawerListeners();
 
-document.forms.questionsForm.addEventListener("submit", e => {
+document.forms.form.addEventListener("submit", e => {
 	e.preventDefault();
 	addQuestionsToBody(e.currentTarget);
 	e.currentTarget.submit();
@@ -16,8 +17,11 @@ document.forms.questionsForm.addEventListener("submit", e => {
 function questionTemplate(questionNumber) {
 	return `
 		<div class="entire-question">
-			<p>Pergunta ${questionNumber}</p>
-			<div class="input-div">
+      <div class="input-div-title">
+        <p>Pergunta ${questionNumber}</p>
+        <img src="./assets/images/vector.png" alt="edit image">
+      </div>
+			<div class="input-div hidden">
 				<input type="text" name="question${questionNumber}" required minlength="20" placeholder="Texto da pergunta">
         <input type="color" name="color${questionNumber}" required placeholder="Cor de fundo da pergunta">
 				<p>Resposta correta</p>
