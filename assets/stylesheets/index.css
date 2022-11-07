@@ -38,6 +38,13 @@ ion-icon {
   color: var(--main-color);
   font-size: 21px;
   cursor: pointer;
+  width: 136px;
+  height: 40px;
+  border: 2px dashed var(--main-color);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #create-quizz:hover {

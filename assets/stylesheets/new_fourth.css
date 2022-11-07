@@ -5,14 +5,15 @@
   justify-content: center;
   width: 500px;
   height: 266px;
+  margin: 30px;
 }
 
 .finished-quizz p {
   position: absolute;
-  width: 400px;
+  width: 80%;
   text-align: center;
   overflow-wrap: break-word;
-  left: 50px;
+  left: auto;
   bottom: 30px;
   color: white;
   text-shadow: 0 0 2px black;
@@ -22,4 +23,14 @@
 .finished-quizz img {
   height: 100%;
   width: 100%;
+}
+
+@media (max-width: 520px) {
+  .finished-quizz {
+    width: 340px;
+    height: 181px;
+  }
+  .finished-quizz p {
+    font-size: 19px;
+  }
 }
