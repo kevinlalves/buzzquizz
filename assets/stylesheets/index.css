@@ -23,7 +23,7 @@ ion-icon {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  border: 1px dotted #D4D4D4;
+  border: 1px dashed #D4D4D4;
   text-align: center;
 }
 
@@ -98,6 +98,9 @@ ion-icon {
   .quizz-list {
     width: 100%;
     flex-direction: column;
+  }
+  .empty-list {
+    width: 340px;
   }
   .list-header {
     width: 340px;
