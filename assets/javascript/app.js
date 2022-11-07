@@ -36,6 +36,9 @@ export function kickIntruder() {
 }
 
 function openDrawer(drawer, drawerOpen) {
+	if (drawerOpen.img === drawer) {
+		return ;
+	}
 	drawerOpen.img.classList.remove("hidden");
 	drawerOpen.img.parentElement.nextElementSibling.classList.add("hidden");
 	drawer.classList.add("hidden");

@@ -5,8 +5,8 @@ const numLevels = Number(localStorage.getItem("numLevels"));
 const numMinLevels = 2;
 const levelsForm = document.forms.form;
 allowReturnHome();
-addDrawerListeners();
 appendExtraContainers(numMinLevels, Number(numLevels), levelTemplate);
+addDrawerListeners();
 
 levelsForm.addEventListener("submit", e => {
 	e.preventDefault();
