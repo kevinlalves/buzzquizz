@@ -5,7 +5,7 @@ if (!localStorage.getItem("selectedQuizz")) {
 }
 
 const quizzID = localStorage.getItem("selectedQuizz");
-let correctAnswer = [];
+const correctAnswer = [];
 let numRightAnswers = 0;
 let numAnsweredQuestions = 0;
 let numQuestions;

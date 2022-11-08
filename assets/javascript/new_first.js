@@ -3,7 +3,7 @@ import { allowReturnHome } from "./app.js";
 allowReturnHome();
 
 document.forms.generalInfoForm.addEventListener("submit", e => {
-  e.preventDefault;
+  e.preventDefault();
   const body = {
     "title": e.currentTarget.title.value,
     "image": e.currentTarget.url.value,

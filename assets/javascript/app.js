@@ -48,8 +48,9 @@ function openDrawer(drawer, drawerOpen) {
 
 export function addDrawerListeners() {
 	const imgs = document.forms.form.querySelectorAll("img");
-	const  drawerOpen = {};
-	drawerOpen.img  = document.getElementById("1");
+	const  drawerOpen = {
+		img: document.getElementById("1")
+	};
 	for (const img of imgs) {
 		img.addEventListener("click", e => {
 			openDrawer(e.currentTarget, drawerOpen);

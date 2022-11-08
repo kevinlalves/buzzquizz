@@ -70,10 +70,9 @@ function createQuestionJSON(form, questionNum) {
 }
 
 function createAnswerJSON(form, answerNum, questionNum) {
-	const answer = {
+	return {
 		"text": form[`wrongAnswer${questionNum}${answerNum}`].value,
 		"image": form[`wrongAnswerUrl${questionNum}${answerNum}`].value,
 		"isCorrectAnswer": false
 	};
-	return answer;
 }

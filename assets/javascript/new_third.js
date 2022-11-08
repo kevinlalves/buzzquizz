@@ -60,11 +60,10 @@ function getRequestBody(form) {
 
 
 function createLevelJSON(form, levelNum) {
-	const level = {
+	return {
 		"title": form[`title${levelNum}`].value,
 		"image": form[`url${levelNum}`].value,
 		"text": form[`description${levelNum}`].value,
 		"minValue": form[`percentage${levelNum}`].value
 	};
-	return level;
 }

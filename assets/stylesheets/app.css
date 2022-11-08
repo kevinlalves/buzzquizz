@@ -36,10 +36,6 @@ header p {
   color: var(--sub-color);
 }
 
-input {
-  padding-left: 10px;
-}
-
 .hidden {
   display: none !important;
 }
@@ -68,6 +64,7 @@ button {
 }
 
 input {
+  padding-left: 10px;
   margin-top: 9px;
   width: 90%;
   height: 46px;
